@@ -1,0 +1,30 @@
+{
+    "name": "zenapply/shared",
+    "description": "Shared resources for the zenapply system",
+    "homepage": "https://github.com/zenapply/shared",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Tyler Arbon",
+            "email": "tylercd100@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.5.9|^7.0",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8|^5.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "Zenapply\\Shared\\":"src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zenapply\\Shared\\Tests\\": "tests/"
+        }
+    },
+    "suggest": {
+    }
+}
