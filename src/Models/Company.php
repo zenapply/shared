@@ -2,19 +2,28 @@
 
 namespace Zenapply\Shared\Models;
 
-use App\Exceptions\Model\DuplicateModelException;
-use App\Events\CompanyWasCreated;
+use Zenapplly\Shared\Exceptions\Model\DuplicateModelException;
+use Zenapplly\Shared\Events\CompanyWasCreated;
 use Exception;
-use Hash;
 use Request;
 
 class Company extends Base
 {
     protected $guarded = array("id");
 
+    /**
+     * The connection name for the model.
+     *
+     * @var string
+     */
+    protected $connection = 'shared';
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
     protected $table = 'companies';
-    public $with = [];//array('culture','signupQuestions');
-    public $withs = array('nodeSettings','images');
 
     /**
      * {@inheritdoc}
@@ -128,59 +137,29 @@ class Company extends Base
     /*==============================================
     =            Eloquent Relationships            =
     ==============================================*/
-    public function culture()
-    {
-        return $this->hasOne('App\Culture', 'cid');
-    }
-
-    public function products()
-    {
-        return $this->belongsToMany('App\Product', 'company_products', 'company_id', 'product_id');
-    }
-
     public function modules()
     {
-        return $this->belongsToMany('App\Module', 'company_modules', 'company_id', 'module_id');
+        return $this->belongsToMany('Zenapply\Shared\Models\Module', 'company_modules', 'company_id', 'module_id');
     }
-
-    public function nodeSettings()
+    
+    public function products()
     {
-        return $this->hasMany('App\NodeSettings', 'cid');
-    }
-
-    public function locations()
-    {
-        return $this->hasMany('App\Location', 'cid');
-    }
-
-    public function signupQuestions()
-    {
-        return $this->hasMany('App\SignupQuestionSettings', 'cid');
-    }
-
-    public function images()
-    {
-        return $this->belongsToMany('App\Image', 'file_company', 'company_id', 'file_id');
+        return $this->belongsToMany('Zenapply\Shared\Models\Product', 'company_products', 'company_id', 'product_id');
     }
 
     public function roles()
     {
-        return $this->hasMany('App\Role', 'cid');
+        return $this->hasMany('Zenapply\Shared\Models\Role', 'cid');
     }
 
     public function permissions()
     {
-        return $this->hasMany('App\Permission', 'cid');
+        return $this->hasMany('Zenapply\Shared\Models\Permission', 'cid');
     }
 
-    public function positions()
+    public function images()
     {
-        return $this->hasMany('App\Position', 'cid');
-    }
-
-    public function flags()
-    {
-        return $this->hasMany('App\Flag', 'cid');
+        return $this->belongsToMany('Zenapply\Shared\Models\Image', 'file_company', 'company_id', 'file_id');
     }
     /*=====  End of Eloquent Relationships  ======*/    
 }

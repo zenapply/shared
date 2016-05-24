@@ -7,6 +7,13 @@ class Product extends Base
     protected $guarded = ['id'];
 
     /**
+     * The connection name for the model.
+     *
+     * @var string
+     */
+    protected $connection = 'shared';
+
+    /**
      * The database table used by the model.
      *
      * @var string
@@ -28,12 +35,12 @@ class Product extends Base
     
     public function companies()
     {
-        return $this->belongsToMany('App\Company', 'company_products', 'product_id', 'company_id');
+        return $this->belongsToMany('Zenapply\Shared\Models\Company', 'company_products', 'product_id', 'company_id');
     }
 
     public function modules()
     {
-        return $this->belongsToMany('App\Module', 'product_modules', 'product_id', 'module_id');
+        return $this->belongsToMany('Zenapply\Shared\Models\Module', 'product_modules', 'product_id', 'module_id');
     }
     
     /*=====  End of Eloquent Relationships  ======*/    

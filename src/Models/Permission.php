@@ -6,6 +6,20 @@ class Permission extends Base
 {
     protected $guarded = array('id');
 
+    /**
+     * The connection name for the model.
+     *
+     * @var string
+     */
+    protected $connection = 'shared';
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'permissions';
+
     protected static function boot()
     {
         parent::boot();
@@ -17,6 +31,6 @@ class Permission extends Base
 
     public function roles()
     {
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('Zenapply\Shared\Models\Role');
     }
 }

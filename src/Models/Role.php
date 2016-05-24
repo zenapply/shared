@@ -9,6 +9,20 @@ use App;
 class Role extends Base
 {
     protected $guarded = array('id');
+    
+    /**
+     * The connection name for the model.
+     *
+     * @var string
+     */
+    protected $connection = 'shared';
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'roles';
 
     public $with = array('permissions','flags','statuses');
 
@@ -60,21 +74,12 @@ class Role extends Base
 
     public function users()
     {
-        return $this->belongsToMany('App\User','assigned_roles');
+        return $this->belongsToMany('Zenapply\Shared\Models\User','assigned_roles');
     }
 
     public function permissions()
     {
-        return $this->belongsToMany('App\Permission');
+        return $this->belongsToMany('Zenapply\Shared\Models\Permission');
     }
 
-    public function flags()
-    {
-        return $this->belongsToMany('App\Flag');
-    }
-
-    public function statuses()
-    {
-        return $this->belongsToMany('App\Status');
-    }
 }
