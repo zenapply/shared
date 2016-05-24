@@ -1,6 +1,6 @@
 <?php
 
-namespace Zenapply\DataTypes\Tests;
+namespace Zenapply\Shared\Tests;
 
 class TestCase extends \PHPUnit_Framework_TestCase
 {
