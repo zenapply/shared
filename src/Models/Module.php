@@ -7,13 +7,6 @@ class Module extends Base
     protected $guarded = ['id'];
 
     /**
-     * The connection name for the model.
-     *
-     * @var string
-     */
-    protected $connection = 'shared';
-
-    /**
      * The database table used by the model.
      *
      * @var string

@@ -9,13 +9,6 @@ use App;
 class Role extends Base
 {
     protected $guarded = array('id');
-    
-    /**
-     * The connection name for the model.
-     *
-     * @var string
-     */
-    protected $connection = 'shared';
 
     /**
      * The database table used by the model.

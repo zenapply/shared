@@ -17,13 +17,6 @@ class User extends Base implements AuthenticatableContract, AuthorizableContract
     protected $guarded = array("id");
 
     /**
-     * The connection name for the model.
-     *
-     * @var string
-     */
-    protected $connection = 'shared';
-
-    /**
      * The database table used by the model.
      *
      * @var string
