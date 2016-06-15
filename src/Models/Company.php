@@ -75,10 +75,6 @@ class Company extends Base
             //Run validations
             $company->validate($company);
         });
-
-        self::created(function($company){
-            event(new CompanyWasCreated($company));
-        });
     }
 
     /**

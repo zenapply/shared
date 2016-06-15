@@ -2,9 +2,9 @@
 
 namespace Zenapply\Shared\Models;
 
-use Input;
-use Auth;
-use App;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
 
 class Role extends Base
 {
@@ -16,8 +16,6 @@ class Role extends Base
      * @var string
      */
     protected $table = 'roles';
-
-    public $with = array('permissions','flags','statuses');
 
     protected static function boot()
     {

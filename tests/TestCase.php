@@ -14,6 +14,7 @@ class TestCase extends Orchestra
 	{
 		parent::setUp();
 		$this->migrate();
+		$this->withFactories(__DIR__.'/factories');
 	}
 
 	public function tearDown()

@@ -2,6 +2,12 @@
 
 All notable changes to `zenapply/shared` will be documented in this file.
 
+### 2.1.1
+- Added unit tests
+
+### 2.1.0
+- Added a random function to models
+
 ### 2.0.0
 - Removed migration file.
 - Removed connection property from models.

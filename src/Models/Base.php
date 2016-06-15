@@ -2,7 +2,7 @@
 
 namespace Zenapply\Shared\Models;
 
-use App\Exceptions\Model\ValidationException;
+use Zenapply\Shared\Exceptions\Model\ValidationException;
 use Config;
 use Log;
 use PulkitJalan\Cacheable\Cacheable;
@@ -84,10 +84,20 @@ abstract class Base extends Model
     }
 
     /**
+     * Scope a query to only include popular users.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrderRandom($query)
+    {
+        return $query->orderBy(DB::raw('random()'));
+    }
+
+    /**
      * Returns a random model from the database
      * @return Base
      */
     public static function random(){
-        return self::orderBy(DB::raw('random()'))->first();
+        return self::orderRandom()->first();
     }
 }
