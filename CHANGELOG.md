@@ -3,7 +3,7 @@
 All notable changes to `zenapply/shared` will be documented in this file.
 
 ### 2.1.1
-- Added unit tests
+- Added unit tests for new 'random' function
 
 ### 2.1.0
 - Added a random function to models
