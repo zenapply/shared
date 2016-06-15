@@ -8,6 +8,7 @@ use Log;
 use PulkitJalan\Cacheable\Cacheable;
 use Validator;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 abstract class Base extends Model
 {
@@ -80,5 +81,13 @@ abstract class Base extends Model
      */
     protected function getValidationMessages(){
         return $this->messages;
+    }
+
+    /**
+     * Returns a random model from the database
+     * @return Base
+     */
+    public static function random(){
+        return self::orderBy(DB::raw('random()'))->first();
     }
 }

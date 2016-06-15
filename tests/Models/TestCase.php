@@ -12,4 +12,11 @@ class TestCase extends BaseTestCase {
         $i = new $model();
         $this->assertInstanceOf($this->model,$i);
     }
+
+    public function testRandomMethod(){
+        $model = $this->model;
+        $random = $model::random();
+        $this->assertNotEmpty($random);
+        $this->assertInstanceOf($this->model,$random);
+    }
 }
