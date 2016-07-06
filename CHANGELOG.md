@@ -2,6 +2,9 @@
 
 All notable changes to `zenapply/shared` will be documented in this file.
 
+### 2.1.2
+- Added a missing exception class
+
 ### 2.1.1
 - Added unit tests for new 'random' function
 
