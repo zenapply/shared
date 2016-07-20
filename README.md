@@ -1,7 +1,7 @@
 # shared
 [![Latest Version](https://img.shields.io/github/release/zenapply/shared.svg?style=flat-square)](https://github.com/zenapply/shared/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Dependency Status](https://www.versioneye.com/user/projects/56f3252c35630e0029db0187/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56f3252c35630e0029db0187)
+[![Dependency Status](https://www.versioneye.com/user/projects/578f9ad513b4e100508c52e1/badge.svg?style=flat)](https://www.versioneye.com/user/projects/578f9ad513b4e100508c52e1)
 
 A bunch of shared resources between Zenapply and LeadThread
 
