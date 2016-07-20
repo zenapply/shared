@@ -59,7 +59,7 @@ class Company extends Base
             $company->domain = strtolower($company->domain);
 
             //Check if protected
-            if(in_array($company->domain,['public','www','all','admin','apply','demo','stage1','stage2'])){
+            if(in_array($company->domain,['public','www','all','admin','apply','demo'])){
                 throw new Exception($company->domain." is a protected domain. Please use another.");
             }
             
