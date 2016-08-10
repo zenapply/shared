@@ -2,6 +2,7 @@
 
 namespace Zenapply\Shared\Exceptions\Model;
 
-class DuplicateModelException extends \Exception{
+class DuplicateModelException extends \Exception
+{
     
 }

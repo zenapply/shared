@@ -2,6 +2,9 @@
 
 All notable changes to `zenapply/shared` will be documented in this file.
 
+### 2.1.4
+- Fixed missing exception class error
+
 ### 2.1.3
 - Removed stage1 and stage2 from the protected subdomains list
 

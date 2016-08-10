@@ -2,8 +2,8 @@
 
 namespace Zenapply\Shared\Models;
 
-use Zenapplly\Shared\Exceptions\Model\DuplicateModelException;
-use Zenapplly\Shared\Events\CompanyWasCreated;
+use Zenapply\Shared\Exceptions\Model\DuplicateModelException;
+use Zenapply\Shared\Events\CompanyWasCreated;
 use Exception;
 use Request;
 
