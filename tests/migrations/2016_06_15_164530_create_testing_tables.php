@@ -62,6 +62,14 @@ class CreateTestingTables extends Migration
             $table->string('last_name');
             $table->timestamps();
         });
+
+        Schema::create('videos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('video_url');
+            $table->string('video_id');
+            $table->string('video_service');
+            $table->timestamps();
+        });
     }
 
     /**

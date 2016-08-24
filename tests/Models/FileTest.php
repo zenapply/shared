@@ -2,6 +2,7 @@
 
 namespace Zenapply\Shared\Tests\Models;
 
-class FileTest extends TestCase {
+class FileTest extends TestCase
+{
     protected $model = 'Zenapply\Shared\Models\File';
 }

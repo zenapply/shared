@@ -2,6 +2,7 @@
 
 namespace Zenapply\Shared\Tests\Models;
 
-class PermissionTest extends TestCase {
+class PermissionTest extends TestCase
+{
     protected $model = 'Zenapply\Shared\Models\Permission';
 }

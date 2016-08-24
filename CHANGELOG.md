@@ -2,6 +2,9 @@
 
 All notable changes to `zenapply/shared` will be documented in this file.
 
+### 2.2.0
+- Added Video Model
+
 ### 2.1.4
 - Fixed missing exception class error
 
