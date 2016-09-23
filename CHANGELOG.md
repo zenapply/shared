@@ -2,6 +2,9 @@
 
 All notable changes to `zenapply/shared` will be documented in this file.
 
+### 2.2.1
+- Removed some model requirements
+
 ### 2.2.0
 - Added Video Model
 

@@ -33,7 +33,10 @@ class TestCase extends Orchestra
 
     protected function migrateReset()
     {
-        $this->artisan('migrate:reset');
+        $this->artisan('migrate:reset', [
+            '--database' => 'testbench',
+            '--realpath' => realpath(__DIR__.'/migrations'),
+        ]);
     }
 
     /**

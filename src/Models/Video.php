@@ -19,9 +19,9 @@ class Video extends Base
      * @var array
      */
     protected $rules = [
-        'video_id' => 'required',
-        'video_service' => 'required|in:youtube,vimeo,viddler',
-        'video_url' => 'required|url',
+        'video_id' => 'string',
+        'video_service' => 'required_with:video_id|in:youtube,vimeo,viddler',
+        'video_url' => 'required_with:video_id|url',
     ];
 
     /*==============================================
