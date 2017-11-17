@@ -79,13 +79,24 @@ class Company extends Base
 
     /**
      * Return an assoc array containing logo info
+     *
+     * @param string $base
      * @return array Logo info
      */
-    public function getLogo(){
-        $logo = $this->images->last();
+    public function getLogo($root = null){
+        $root = $root ?: Request::root();
+
+        if (strpos("localhost", $root) !== false) {
+            throw new \Exception("The root of the logo url is invalid: {$root}", 1);
+        }
+
+        $logos = $this->images;
+        $logo = $logos ? $logos->last() : null;
+        $path = $logo ? implode("/", [$root, $logo->directory, $logo->filename]) : null;
+
         return [
-            "path"=>Request::root().$logo->directory."/".$logo->filename,
-            "background"=>$this->color_header,
+            "path" => $path,
+            "background" => $this->color_header,
         ];
     }
 
